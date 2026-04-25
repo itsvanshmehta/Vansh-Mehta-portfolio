@@ -274,7 +274,13 @@
   #certifications .section-title { color: var(--cream); }
   #certifications .section-label { }
   .certs-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem;
+  }
+  @media (max-width: 1100px) {
+    .certs-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  }
+  @media (max-width: 600px) {
+    .certs-grid { grid-template-columns: 1fr; gap: 0.8rem; }
   }
   .cert-card {
     background: rgba(255,255,255,0.04);
@@ -386,36 +392,98 @@
   .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
 
   @media (max-width: 900px) {
+    /* NAV */
+    nav { padding: 0.9rem 1.2rem; flex-wrap: wrap; gap: 0.5rem; }
+    .nav-links { gap: 0.6rem; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.03em; }
+    .nav-logo span { font-size: 1rem; }
+
+    /* HERO */
     .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { padding: 6rem 1.5rem 2.5rem; }
-    .hero-right { padding: 2.5rem 1.5rem; }
-    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .stat-number { font-size: 2rem; }
-    #about { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 1.5rem; }
-    section { padding: 3.5rem 1.5rem; }
-    .certs-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-    nav { padding: 0.9rem 1.2rem; }
-    .nav-links { gap: 0.75rem; }
-    .nav-links a { font-size: 0.75rem; }
-    .nav-logo span { font-size: 1.1rem; }
-    .section-title { font-size: 1.8rem; }
+    .hero-left { padding: 6rem 1.5rem 2rem; }
+    .hero-right { padding: 2rem 1.5rem 2.5rem; }
     .hero-name { font-size: 3rem; }
-    .qualities-grid { grid-template-columns: 1fr 1fr; }
-    .extracurr-card { flex-direction: column; }
-    .extracurr-img { width: 100%; height: 200px; }
-    .tl-card { padding: 1.2rem; }
+    .hero-title { font-size: 0.95rem; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+    .stat-number { font-size: 1.8rem; }
+    .stat-label { font-size: 0.72rem; }
+    .stat-card { padding: 1.1rem; }
+
+    /* SECTIONS */
+    section { padding: 3rem 1.5rem; }
+    .section-title { font-size: 1.9rem; }
+
+    /* ABOUT */
+    #about { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.5rem; }
+    .skills-grid { gap: 0.4rem; }
+    .skill-pill { font-size: 0.75rem; padding: 0.35rem 0.8rem; }
+
+    /* EXPERIENCE */
+    .tl-card { padding: 1.2rem 1.3rem; }
+    .tl-company { font-size: 0.95rem; }
+    .tl-bullets li { font-size: 0.82rem; }
+
+    /* CERTS */
+    .certs-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    /* QUALITIES */
+    .qualities-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .quality-card { padding: 1.2rem; }
+
+    /* EXTRACURRICULAR */
+    .extracurr-card-new { height: auto; min-height: 500px; border-radius: 16px; }
+    .cascade-1 { width: 55%; height: 70%; top: 3%; left: 3%; }
+    .cascade-2 { width: 55%; height: 70%; top: 5%; left: 1.5%; }
+    .cascade-3 { width: 55%; height: 70%; top: 7%; left: 0%; }
+    .extracurr-content-new { width: 50%; padding: 2rem 1.5rem; }
+    .extracurr-content-new .extracurr-role { font-size: 1.3rem; padding-left: 1rem; }
+    .extracurr-content-new .extracurr-org { padding-left: 1rem; }
+    .extracurr-desc-new { padding-left: 1rem; font-size: 0.78rem; }
+    .extracurr-content-new .extracurr-link { padding-left: 1rem; }
+
+    /* CONTACT */
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .cta-box { padding: 2rem 1.5rem; }
-    .hero-stats { margin-bottom: 0; }
+    .cta-box h3 { font-size: 1.6rem; }
   }
-  @media (max-width: 480px) {
-    .hero-name { font-size: 2.4rem; }
-    .hero-stats { grid-template-columns: 1fr 1fr; }
-    .qualities-grid { grid-template-columns: 1fr; }
-    .nav-links { gap: 0.5rem; }
-    .nav-links a { font-size: 0.7rem; letter-spacing: 0.02em; }
+
+  @media (max-width: 600px) {
+    nav { position: fixed; }
+    .nav-links { display: none; }
+    .hero-left { padding: 5rem 1.2rem 1.5rem; }
+    .hero-right { padding: 1.5rem 1.2rem 2rem; }
+    .hero-name { font-size: 2.6rem; }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+    .stat-card { padding: 0.9rem; }
+    .stat-number { font-size: 1.6rem; }
+    section { padding: 2.5rem 1.2rem; }
+    .section-title { font-size: 1.6rem; }
     .certs-grid { grid-template-columns: 1fr; }
-    .edu-meta { flex-wrap: wrap; }
+    .qualities-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+    .edu-meta { flex-wrap: wrap; gap: 0.4rem; }
+    .timeline::before { left: -2px; }
+    .timeline-item { padding-left: 1.8rem; }
+
+    /* Extracurricular stacks vertically on small screens */
+    .extracurr-card-new { min-height: auto; }
+    .cascade-layer { display: none; }
+    .cascade-1 { 
+      display: block; position: relative; width: 100%; height: 260px;
+      top: 0; left: 0; transform: none !important; border-radius: 16px 16px 0 0;
+    }
+    .extracurr-content-new {
+      position: relative; width: 100%; clip-path: none;
+      padding: 1.5rem 1.2rem; border-radius: 0 0 16px 16px;
+    }
+    .extracurr-content-new .extracurr-role,
+    .extracurr-content-new .extracurr-org,
+    .extracurr-desc-new,
+    .extracurr-content-new .extracurr-link { padding-left: 0; }
+    .extracurr-content-new .extracurr-role { font-size: 1.3rem; }
+
+    .contact-link { font-size: 0.82rem; padding: 0.8rem 1rem; }
+    .hero-ctas { flex-direction: column; gap: 0.7rem; }
+    .btn-primary, .btn-outline { text-align: center; padding: 0.7rem 1.4rem; }
   }
 
   /* EXTRACURRICULAR - CASCADING */
@@ -551,7 +619,7 @@
   <div class="hero-right">
     <div class="hero-stats">
       <div class="stat-card">
-        <div class="stat-number">4</div>
+        <div class="stat-number">4+</div>
         <div class="stat-label">Internships Completed</div>
       </div>
       <div class="stat-card">
@@ -559,12 +627,12 @@
         <div class="stat-label">People Reached in Campaign</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">5</div>
-        <div class="stat-label">Certifications Earned</div>
-      </div>
-      <div class="stat-card">
         <div class="stat-number">8.5</div>
         <div class="stat-label">GPA — AI/ML at IIT Patna</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">8.3</div>
+        <div class="stat-label">GPA — BMS at Mithibai College</div>
       </div>
     </div>
     <div class="hero-contact">
@@ -737,6 +805,27 @@
         <div class="cert-uid">UID: y1yhts7qwgh</div>
       </div>
     </div>
+    <div class="cert-card" style="cursor:default;">
+      <div class="cert-img-wrap">
+        <div style="position:absolute;inset:0;background:linear-gradient(145deg,#071a1a 0%,#0d3330 50%,#1a9e8f 100%);display:flex;align-items:center;justify-content:center;padding:1.2rem;">
+          <div style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(43,191,174,0.35);border-radius:10px;padding:1rem 1.1rem;">
+            <div style="font-size:0.45rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.5rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.4rem;">Certificate of Completion</div>
+            <div style="font-size:0.48rem;color:rgba(255,255,255,0.35);margin-bottom:0.2rem;">This is to certify that</div>
+            <div style="font-family:'Instrument Serif',serif;font-size:0.95rem;color:#2bbfae;margin-bottom:0.4rem;">Vansh Mehta</div>
+            <div style="font-size:0.48rem;color:rgba(255,255,255,0.45);line-height:1.5;margin-bottom:0.6rem;">has successfully completed <strong style="color:rgba(255,255,255,0.8);">ERPNext Implementation &amp; Sales</strong> at Software@work.</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.08);padding-top:0.5rem;">
+              <div style="font-size:0.44rem;color:rgba(255,255,255,0.3);">Apr–Jun 2025 · Mumbai</div>
+              <div style="width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#1a9e8f,#2bbfae);display:flex;align-items:center;justify-content:center;font-size:0.55rem;color:white;font-weight:700;">✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cert-info">
+        <div class="cert-name">ERPNext Certified</div>
+        <div class="cert-issuer">Software@work · Apr–Jun 2025</div>
+        <div class="cert-uid">ERP Implementation &amp; Sales</div>
+      </div>
+    </div>
   </div>
   <p style="color:rgba(255,255,255,0.35);font-size:0.8rem;margin-top:1.5rem;text-align:center;">Click any certificate to view full size</p>
 </section>
@@ -881,4 +970,3 @@
 </script>
 </body>
 </html>
-
